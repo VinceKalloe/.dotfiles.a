@@ -1,0 +1,8 @@
+[user]
+	name = Vince Kalloe
+	email = VinceKalloe@proton.me
+[core]
+	pager = cat
+	editor = nvim
+[init]
+	defaultBranch = main

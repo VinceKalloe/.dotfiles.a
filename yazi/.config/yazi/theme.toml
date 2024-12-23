@@ -1,0 +1,9 @@
+[flavor]
+dark = "gruvbox-dark"
+# dark = "ayu-dark"
+# dark = "everforest-medium"
+
+light = "kanagawa-dragon"
+#light = "ayu-dark"
+#light = "everforest-medium"
+

@@ -1,0 +1,5 @@
+[plugin]
+deps = []
+
+[flavor]
+deps = [{ use = "bennyyip/gruvbox-dark", rev = "b4cc9f2" }, { use = "marcosvnmelo/kanagawa-dragon", rev = "2ddff30" }, { use = "kmlupreti/ayu-dark", rev = "441a38d" }, { use = "Chromium-3-Oxide/everforest-medium", rev = "65bc09b" }]
