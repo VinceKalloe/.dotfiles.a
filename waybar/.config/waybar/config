@@ -23,7 +23,7 @@
 	"memory",
 	"temperature",
 	"backlight",
-	"wireplumber",
+//	"wireplumber",
         "backlight",
         "clock",
         "battery",
