@@ -200,3 +200,4 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+. "$HOME/.cargo/env"

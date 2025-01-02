@@ -49,4 +49,26 @@ return {
       require("langmapper").setup({})
     end,
   },
+
+  -- Configure noice with standard cmdline
+  {
+    "folke/noice.nvim",
+    opts = {
+      cmdline = {
+        view = "cmdline",
+      },
+      popupmenu = {
+        enabled = true,
+        backend = "nui",
+        kind_icons = {},
+      },
+      presets = {
+        bottom_search = true, -- use a classic bottom cmdline for search
+        command_palette = true, -- position the cmdline and popupmenu together
+        -- longmessagetosplit = true, -- long messages will be sent to a split
+        -- increname = false, -- enables an input dialog for inc-rename.nvim
+        -- lspdocborder = false, -- add a border to hover docs and signature help
+      },
+    },
+  },
 }
