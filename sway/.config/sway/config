@@ -18,6 +18,7 @@ set $term foot
 # Your preferred application launcher
 # set $menu wmenu-run
 set $menu 'rofi -modi, run, drun, window -show drun'
+set $pwr 'rofi -show p -modi p:$HOME/.config/rofi/.rofi-power-menu -theme-str "window {width:12em;} listview {lines: 6;}"'
 
 # Appearance
 # # Colors
@@ -73,7 +74,8 @@ exec ~/.config/scripts/swww_randomize.sh ~/.BG
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output Virtual-1 resolution 1920x1080 position 1920,0
+#output Virtual-1 resolution 1920x1080 position 1920,0
+output Virtual-1 resolution 2048x1152 position 2048,0
 #output Virtual-1 resolution 1920x1080 position 1920,0
 
 ### Idle configuration
@@ -100,7 +102,7 @@ output Virtual-1 resolution 1920x1080 position 1920,0
 #       middle_emulation enabled
 #   }
 #
-input "" {
+input * {
 	xkb_layout us,ru
 	xkb_options grp:alt_shift_toggle
 }
@@ -119,6 +121,9 @@ input "" {
 
     # Start your launcher
     bindsym $mod+d exec $menu
+
+    # Power menu
+    bindsym $mod+p exec $pwr
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
