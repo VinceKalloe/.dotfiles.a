@@ -1,0 +1,10 @@
+ls
+z
+\z
+zoxide 
+cd
+ls
+l
+ls -lah
+ls -la
+exit

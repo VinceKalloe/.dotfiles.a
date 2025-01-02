@@ -62,6 +62,9 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ---- Eza (better ls) -----
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias l='exa -lahbgF --git --icons'
+alias ll='ls -alF'
+alias la='ls -A'
 
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
@@ -130,3 +133,37 @@ eval "$(zoxide init zsh)"
 alias cd="z"
 
 # for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+
+# Aliases
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias sudo='sudo '
+alias ip='ip -c '
+
+# -- Some nvim
+# NeoVIM multiply configs
+alias nvlv="NVIM_APPNAME=LazyVim nvim"
+alias nvks="NVIM_APPNAME=kickstart nvim"
+alias nvch="NVIM_APPNAME=NvChad nvim"
+
+function nvims() {
+  items=("default -> ~/.config/nvim" "kickstart -> ~/.config/nvim.ks" "LazyVim -> ~/.config/nvim.lv" "NvChad -> ~/.config/nvim.ch")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt="  Neovim Config > " --height=~50% --layout=reverse --border --exit-0)
+  echo $config
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  # NVIM_APPNAME=$config nvim $@
+  NVIM_APPNAME=$(echo $config | cut -d' ' -f 3 | cut -d '/' -f 3)
+  # echo $NVIM_APPNAME
+  NVIM_APPNAME=$(echo $config | cut -d' ' -f 3 | cut -d '/' -f 3) nvim $@
+  # nvim $@
+}
+
+bindkey -s ^a "nvims\n"
+
+
