@@ -6,20 +6,20 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.zhistfile
-HISTSIZE=10000
-SAVEHIST=10000
-setopt share_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_verify
+# HISTFILE=~/.zhistfile
+# HISTSIZE=10000
+# SAVEHIST=10000
+# setopt share_history
+# setopt hist_expire_dups_first
+# setopt hist_ignore_dups
+# setopt hist_verify
 
 # Default editor
-export EDITOR=nvim
+# export EDITOR=nvim
 
 # completion using arrow keys (based on history)
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
+# bindkey '^[[A' history-search-backward
+# bindkey '^[[B' history-search-forward
 
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -141,11 +141,14 @@ alias egrep='egrep --color=auto'
 alias sudo='sudo '
 alias ip='ip -c '
 
-# -- Some nvim
+# -- Some nvims
 # NeoVIM multiply configs
-alias nvlv="NVIM_APPNAME=LazyVim nvim"
-alias nvks="NVIM_APPNAME=kickstart nvim"
-alias nvch="NVIM_APPNAME=NvChad nvim"
+alias nl="NVIM_APPNAME=LazyVim nvim"
+alias nk="NVIM_APPNAME=kickstart nvim"
+alias nc="NVIM_APPNAME=NvChad nvim"
+
+# Default is LazyVim
+export NVIM_APPNAME="nvim.lv"
 
 function nvims() {
   items=("default -> ~/.config/nvim" "kickstart -> ~/.config/nvim.ks" "LazyVim -> ~/.config/nvim.lv" "NvChad -> ~/.config/nvim.ch")
@@ -155,7 +158,8 @@ function nvims() {
     echo "Nothing selected"
     return 0
   elif [[ $config == "default" ]]; then
-    config=""
+    #config=""
+    config="LazyVim -> ~/.config/nvim.lv" 
   fi
   # NVIM_APPNAME=$config nvim $@
   NVIM_APPNAME=$(echo $config | cut -d' ' -f 3 | cut -d '/' -f 3)
