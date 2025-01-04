@@ -75,8 +75,10 @@ exec ~/.config/scripts/swww_randomize.sh ~/.BG
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 #output Virtual-1 resolution 1920x1080 position 1920,0
+# output Virtual-1 resolution 2048x1152 position 2048,0
 output Virtual-1 resolution 2048x1152 position 2048,0
 #output Virtual-1 resolution 1920x1080 position 1920,0
+include ~/.config/sway/outputs
 
 ### Idle configuration
 #

@@ -18,8 +18,8 @@ fi
 # export EDITOR=nvim
 
 # completion using arrow keys (based on history)
-# bindkey '^[[A' history-search-backward
-# bindkey '^[[B' history-search-forward
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
 
 bindkey -e
 # End of lines configured by zsh-newuser-install
