@@ -94,6 +94,11 @@ button:hover {
 #scratchpad,
 #mode,
 #window,
+#language {
+    padding: 0 10px;
+    background-color: #282828;
+    color: #fe8019;
+}
 #clock {
     padding: 0 10px;
     background-color: #282828;

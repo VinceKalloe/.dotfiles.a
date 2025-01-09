@@ -25,6 +25,7 @@
     "backlight",
     //	"wireplumber",
     "backlight",
+    "sway/language",
     "clock",
     "battery",
     "tray"
@@ -161,6 +162,9 @@
       "",
       ""
     ]
+  },
+  "sway/language": {
+    "format": "{}"
   },
   "battery": {
     "states": {
